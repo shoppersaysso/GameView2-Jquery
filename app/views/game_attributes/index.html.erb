@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Game Attributes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_attributes.each do |game_attribute| %>
+      <tr>
+        <td><%= link_to 'Show', game_attribute %></td>
+        <td><%= link_to 'Edit', edit_game_attribute_path(game_attribute) %></td>
+        <td><%= link_to 'Destroy', game_attribute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game Attribute', new_game_attribute_path %>

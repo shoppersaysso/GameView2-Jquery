@@ -1,0 +1,80 @@
+  <div id="masthead">
+    <div class="container">
+        <div class="row">
+          <div class="">
+            <h1>Welcome to GameView
+              <p class="lead"><%= current_user.email %></p>
+            </h1>
+          </div>
+
+    </div><!--/container-->
+  </div><!--/masthead-->
+
+
+    <!--main-->
+    <div class="container">
+    	<div class="row">
+
+        <br></br>
+
+        <br></br>
+
+          <div class="">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h3><%= link_to 'My Games', games_path %></h3></div>
+                  <div class="panel-body">
+
+                    <%= render :partial => 'games/list_games' %>
+                    <br></br>
+                    <%= link_to "[Add Game]", new_game_path %>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading"><h3>GameView Level</h3></div>
+                  <div class="panel-body">
+
+                    <h3><% case current_user.gameview_level
+                        when 0 %>
+                    		Newbie
+                    		<% when 1, 2, 3 %>
+                    		Beginner Gamer
+                        <% when 4, 5, 6 %>
+                        Average Gamer
+                        <% when 7, 8, 9 %>
+                        Advanced Gamer
+                        <% when 10 %>
+                        Power Gamer
+                    		<% end %></h3>
+
+                    <br></br>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br></br>
+
+            <hr>
+
+            <br></br>
+            <div class="panel-heading"><h3>My Reviews</h3></div>
+
+            <p>
+                <%= render :partial => 'reviews/list_reviews'%>
+                <br></br>
+            </p>
+
+            <br></br>
+
+            <hr>
+
+            </div><!--/right-->
+      	</div><!--/row-->
+    </div><!--/container-->

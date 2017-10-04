@@ -1,0 +1,19 @@
+    <% if @user.reviews.empty? %>
+    <h2><%= @user.email %> doesn't have any reviews!</h2>
+    <% else %>
+  <h1><%= @user.email %>'s Reviews:</h1>
+  <br>
+    <div>
+      <% @user.reviews.each do |review| %>
+        <h2><strong><%= review.title %></strong></h2>
+        <h4><em><%= review.game.title %></em></h4>
+        <h3><%= review.content %></h3>
+      <% end %>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'Back', users_index_path %>
+
+</div>

@@ -1,0 +1,23 @@
+<%= form_with(model: game, local: true) do |f| %>
+
+    <div class="actions">
+      <p><%= f.label :title %>
+         <%= f.text_field :title %></p>
+      <p><%= f.label :developer %>
+          <%= f.text_field :developer %></p>
+      <p><%= f.fields_for :game_attributes, game_attribute do |attributes_form| %>
+            <%= attributes_form.label :genre %>
+            <%= attributes_form.text_field :genre %>
+
+            <%= attributes_form.label :esrb_rating %>
+            <%= attributes_form.text_field :esrb_rating %>
+
+            <%= attributes_form.label :multiplayer %>
+            <%= attributes_form.select :multiplayer, [['Yes', true], ['No', false]] %></p>
+        <% end %>
+
+        <%= f.submit %>
+
+    <% end %>
+
+  </div>

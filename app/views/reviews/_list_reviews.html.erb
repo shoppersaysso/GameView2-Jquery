@@ -1,0 +1,14 @@
+<% if current_user.reviews.empty? %>
+  <%= "There aren't any reviews to display. Check out some recent reviews by other users:" %>
+  <% @recent_reviews.each do |review| %>
+    <p><h3><strong><%=review.title %></strong></h3></p>
+    <p><em><%= review.content %></em></p>
+    <p>Review for "<%= review.game.title%>"</p>
+  <% end %>
+<% else %>
+  <% current_user.reviews.each do |review|%>
+    <p><h3><strong><%=link_to review.title, game_review_path(review.game, review) %></strong></h3></p>
+    <p><em><%= review.content %></em></p>
+    <p>Review for "<%= link_to review.game.title, game_path(review.game)%>"</p>
+  <% end %>
+<% end %>

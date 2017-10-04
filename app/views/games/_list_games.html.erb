@@ -1,0 +1,7 @@
+<% if current_user.games.empty? %>
+<%= "You don't have any games to display. To get started, add a video game you own. You can set the status to new, playing, or beat. You can also review it. The more reviews you make, the higher your GameView Level will be!" %>
+<% else %>
+<% current_user.games.each do |game|%>
+  <p><%= link_to game.title, game %></p>
+  <% end %>
+<% end %>

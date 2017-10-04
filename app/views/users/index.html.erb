@@ -1,0 +1,11 @@
+<h1>Users</h1>
+
+<br></br>
+
+  <div>
+    <% @users.each do |user| %>
+        <p><h4><%=link_to user.email, user %>-<%=user.reviews.count%></h4></p>
+    <% end %>
+  </div>
+
+<br>
