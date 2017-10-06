@@ -6,8 +6,7 @@ class Game < ActiveRecord::Base
   #accepts_nested_attributes_for :game_attributes, allow_destroy: true
 
   def game_attributes_attributes=(attr)
-    # binding.pry
-    ga_hash = attr["0"]
+    ga_hash = attr[0]
     self.game_attributes.build(ga_hash)
   end
 
