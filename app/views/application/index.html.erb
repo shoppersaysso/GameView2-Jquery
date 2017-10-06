@@ -2,13 +2,41 @@
 <p><em>Catalog the video games you own, review them, and more!</em></p>
 <br></br>
 
-<container textalli>
+
   <div class="col-md-8">
     <img src="reflection-pad-gaming-gamepad.jpg" width="400" height="80" class="img-responsive">
   </div>
 
-  <div class="col-md-4">
-    <h3><%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %></h3>
-    <h4><%= link_to('or Log in with Facebook', 'users/auth/facebook') %></h4>
+  <div class="user col-md-4">
+    <div class="user-container">
+
+      <ul class="login-switcher">
+
+        <li><a href="#">Log In</a></li>
+        <li><a href="#">Create A New Account</a></li>
+
+      </ul>
+
+      <div id="login">
+
+        <!-- form here -->
+
+        <p class="form-bottom-message"><a href="#">Forget your password?</a></p>
+      </div>
+
+      <div id="signup">
+
+        <!-- form here -->
+
+      </div>
+
+      <div id="reset-password">
+
+        <!-- form here -->
+
+        <p class="form-bottom-message"><a href="#">Back to login</a></p>
+      </div>
+    </div>
+
+    <a href="#" class="close-form">Close</a>
   </div>
-</container>
