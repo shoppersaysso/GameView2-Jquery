@@ -11,6 +11,12 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @games = Game.all
+    if params[:search]
+       @games = Game.search(params[:search]).order("created_at DESC")
+    else
+       @games = Game.all.order('created_at DESC')
+    end
   end
 
   def edit

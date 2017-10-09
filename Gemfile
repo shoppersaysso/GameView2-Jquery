@@ -26,6 +26,10 @@ gem 'omniauth'
 
 gem 'pry'
 
+gem 'igdb_api'
+
+gem 'unirest'
+
 gem 'omniauth-facebook'
 
 gem 'dotenv-rails'
