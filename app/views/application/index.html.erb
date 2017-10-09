@@ -18,7 +18,7 @@
         <%= render :partial => 'devise/sessions/login' %>
 
         <p class="login__signup">Don't have an account? &nbsp;<a href="javascript:void(0)" id="showSignUp"><strong>Sign up</strong></a></p>
-        <p strong><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></strong><br /></p>
+        <p><em><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></strong></em><br /></p>
       </div>
 
       <div id="signup" class="hidden">
@@ -28,7 +28,7 @@
         <%= render :partial => 'devise/registrations/new' %>
 
         <p class="login__signin">Already have an account? &nbsp;<a href="javascript:void(0)" id="showLogIn"><strong>Log In</strong></a></p>
-        <p><strong><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></strong><br /></p>
+        <p><em><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></em><br /></p>
       </div>
 
     </div>
