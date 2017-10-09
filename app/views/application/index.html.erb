@@ -19,23 +19,17 @@
 
       <div id="login">
 
-        <!-- form here -->
+        <%= render :partial => 'devise/sessions/login' %>
 
         <p class="form-bottom-message"><a href="#">Forget your password?</a></p>
       </div>
 
       <div id="signup">
 
-        <!-- form here -->
+        <%= render :partial => 'devise/registrations/new' %>
 
       </div>
 
-      <div id="reset-password">
-
-        <!-- form here -->
-
-        <p class="form-bottom-message"><a href="#">Back to login</a></p>
-      </div>
     </div>
 
     <a href="#" class="close-form">Close</a>
