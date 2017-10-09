@@ -2,35 +2,33 @@
 <p><em>Catalog the video games you own, review them, and more!</em></p>
 <br></br>
 
+  <div class="col-md-2">
 
-  <div class="col-md-8">
+  </div>
+
+  <div class="col-md-6">
     <img src="reflection-pad-gaming-gamepad.jpg" width="400" height="80" class="img-responsive">
   </div>
 
-  <div class="user col-md-4">
-    <div class="user-container">
+  <div class="user col-md-4 text-left">
+      <div id="login" class="">
 
-      <ul class="login-switcher">
-
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Create A New Account</a></li>
-
-      </ul>
-
-      <div id="login">
+        <h4>Log In</h4>
 
         <%= render :partial => 'devise/sessions/login' %>
 
-        <p class="form-bottom-message"><a href="#">Forget your password?</a></p>
+        <p class="login__signup">Don't have an account? &nbsp;<a href="javascript:void(0)" id="showSignUp"><strong>Sign up</strong></a></p>
+        <p strong><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></strong><br /></p>
       </div>
 
-      <div id="signup">
+      <div id="signup" class="hidden">
+
+        <h4>Create a New Account</h4>
 
         <%= render :partial => 'devise/registrations/new' %>
 
+        <p class="login__signin">Already have an account? &nbsp;<a href="javascript:void(0)" id="showLogIn"><strong>Log In</strong></a></p>
+        <p><strong><%= link_to "Or Sign in with Facebook", omniauth_authorize_path(resource_name, :facebook) %></strong><br /></p>
       </div>
 
     </div>
-
-    <a href="#" class="close-form">Close</a>
-  </div>
