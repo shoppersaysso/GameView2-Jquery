@@ -1,13 +1,15 @@
 <h1>Search for a Game</h1>
 
+<div id="errors"></div>
+
   <div id="search">
-    <%= form_tag(games_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= form_tag(games_path, :method => "get", id: "searchTerms") do %>
+      <%= text_field_tag id: "searchTerms" :search, params[:search], placeholder: "Search Games" %>
       <%= submit_tag "Search" %>
     <% end %>
   </div>
 
-  <div id="search-results">
+  <div id="results">
 
   <% if @games.present? %>
     <%= render @games %>
@@ -23,3 +25,7 @@
     </div>
 
   <%= link_to 'Back', games_path %>
+
+
+  <script src="jquery-3.1.0.min.js"></script>
+  <script src="index.js"></script>
