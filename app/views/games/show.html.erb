@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @game.title %></h3>
+  <p><strong>Developer: </strong><%= @game.developer %></p>
+    <p><strong>Genre: </strong><%= @game.genre%></p>
+    <p><strong>ESRB Rating: </strong><%= @game.esrb_rating%></p>
+    <p><strong>Players: </strong><%= @game.is_multiplayer?%></p>
+
+  <%= form_for(@game) do |f| %>
+    <p><%= f.label :status %>
+       <%= f.select :status,[['New', 'new'], ['Playing', 'playing'], ['Beat', 'beat'],]  %></p>
+       <%= f.submit value="Update Status"%>
+      <% end %>
+    <br>
+    <br>
+
+  <h4><%= link_to 'Review Game', new_game_review_path(@game) %></h4>
+  <br>
+  <%= link_to 'Back', home_path %> |
+  <%= link_to 'Edit', edit_game_path(@game) %> |
+  <%= link_to 'Delete', @game, method: :delete, data: { confirm: 'Are you sure?' } %></p>
